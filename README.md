@@ -8,29 +8,14 @@ You are given a string stored in variable `problem`. Write code so that you prin
 
 ```swift
 var problem = "split this string into words and print them on separate lines"
+var problemArr = problem.split(separator: " ")
 
-// Your code
+for i in problemArr {
+    print(i)
+}
 ```
 
-Example
 
-Input:
-`var problem ="split this string into words and print them on separate lines"`
-
-Output:
-```swift
-split
-this
-string
-into
-words
-and
-print
-them
-on
-separate
-lines
-```
 
 
 ## Question 2
@@ -46,23 +31,46 @@ let testString = "  How   about      thesespaces  ?  "
 ## Question 3
 
 Given a string with multiple words. Reverse the string word by word.
+```swift 
+let aString: String = "Swift is the best language"
+let aStringArr = aString.split(separator: " ")
+var reverse = (aStringArr.reversed())
+for word in reverse {
+print(word, terminator: " " )
+}
 
-Example:
 
-Sample Input: `"Swift is the best language"`
-
-Sample Output: `"language best the is Swift"`
+```
 
 
 ## Question 4
 
 Given a string with multiple words. Write code that prints how many of them are palindromes.
 
-Example:
+```swift 
+var aString = "danaerys dad cat civic bottle"
+let aStringArr = aString.split(separator: " ")
 
-Sample Input: `"danaerys dad cat civic bottle"`
+var reverse = String(aString.reversed())
+let reverseArr = reverse.split(separator: " ")
 
-Sample Output: `2`
+var pallindromeCount = 0
+
+
+for word in aStringArr{
+for word2 in reverseArr {
+if word == word2  {
+pallindromeCount += 1
+
+}
+}
+
+}
+print(pallindromeCount)
+
+
+
+```
 
 
 ## Question 5
@@ -81,7 +89,28 @@ Example:
 
 Sample Input: `"PPALLP"`
 
-Sample Output: `true`
+Sample Output: `true` 
+
+```swift 
+var studentRecord = "PPALLP"
+var absentNum = 0
+var lateNum = 0
+
+for letter in studentRecord {
+if letter == "A"{
+absentNum += 1
+}
+}
+if studentRecord.contains("LLL") || absentNum > 1{
+print(false)
+
+} else {
+print(true)
+}
+
+
+
+```
 
 
 ## Question 6
@@ -98,4 +127,9 @@ Sample Output1: `False`
 
 Sample Input2: `("aa", "aab")`
 
-Sample Output2: `True`
+Sample Output2: `True` 
+```swift 
+var input2 = (ransom:"aa", magazine:"aba")
+var check = String(input2.magazine.sorted()).contains(String(input2.ransom.sorted()))
+
+```
